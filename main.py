@@ -1,4 +1,5 @@
-#YouTube Video: https://www.youtube.com/watch?v=pVI0bqwMjqog
+# YouTube Video: https://www.youtube.com/watch?v=pVI0bqwMjqog
+# Color chart: https://www.webucator.com/article/python-color-constants-module/
 
 import pygame
 import random
