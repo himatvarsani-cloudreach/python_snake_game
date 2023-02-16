@@ -8,7 +8,7 @@ class Snake():
         #Initialize the attributes
         self.length = 3
         self.position = [(WIDTH//2, HEIGHT//2), (WIDTH//2, HEIGHT//2 + gridsize), (WIDTH//2, HEIGHT//2 + 2*gridsize)  ]   #Array of co-ordinates
-        self.color = (0, 0, 255)
+        self.color = (110,139,61)
         self.direction = up
         self.score = 0
         
@@ -32,7 +32,7 @@ class Snake():
             global Highscore
             Highscore = self.score if self.score > Highscore else Highscore
             
-            myfont = pygame.font.SysFont('Comic Sans MS', 25)
+            myfont = pygame.font.SysFont('Comic Sans MS', 20)
             text = myfont.render("Game Over", True , (0, 0, 0))
             text_rect = text.get_rect(center=(WIDTH//2, HEIGHT//2 - 20))
             
@@ -65,7 +65,7 @@ class Snake():
 class Food():
     def __init__(self):
         self.position = (random.randint(0, WIDTH)//grids*grids, random.randint(0, WIDTH)//grids*grids)
-        self.color = (0, 0, 0)
+        self.color = (0,0,139)
         
     def draw_food(self,window):
         pygame.draw.rect(window, self.color, (self.position[0], self.position[1], gridsize, gridsize))
@@ -86,7 +86,7 @@ left = (-1,0)
 right = (1,0)
 
 def setBackground(window):
-    window.fill((175, 215, 70))
+    window.fill((205,200,177))
     #pygame.display.update()
 
 def main():    
@@ -101,7 +101,7 @@ def main():
     
     myfont = pygame.font.SysFont('Comic Sans MS', 20)
     while True:
-        clock.tick(12)    #12 frames per second
+        clock.tick(10)    #12 frames per second
         snake.movement()
         snake.check_game_end(window)
         setBackground(window)
